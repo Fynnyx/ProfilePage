@@ -1,0 +1,14 @@
+button.button--primary {
+  background-color: #ff6600;
+  color: #02111b;
+  border: none;
+  padding: 0.75rem;
+  font-size: 20px;
+  font-weight: 550;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+}
+button.button--primary:hover {
+  cursor: pointer;
+}/*# sourceMappingURL=button.css.map */
