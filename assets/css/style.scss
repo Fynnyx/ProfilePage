@@ -1,0 +1,89 @@
+@import "./colors.scss";
+
+* {
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+    background-color: $middle-blue;
+    margin: 0;
+}
+
+.sidebar {
+    padding-top: 80px;
+    min-height: 100%;
+    width: 283px;
+    background-color: $dark-blue;
+    border-right: $orange 7px solid;
+
+    &__content {
+        margin: 400px 2rem 0;
+        &__socials {
+            display: flex;
+            align-items: flex-end;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            border-bottom: $white 3px solid;
+            width: max-content;
+
+            &__link {
+                color: white;
+                margin-right: 1rem;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+                &__icon {
+                    font-size: 40px;
+                    padding: 0;
+                    margin: 0;
+                    width: min-content;
+                }
+            }
+        }
+        &__infos {
+            list-style: none;
+            padding: 0;
+            &__item {
+                font-size: 25px;
+                color: $white;
+                margin-bottom: 2rem;
+                &__title {
+                    height: max-content;
+                    display: flex;
+                    align-items: flex-end;
+                    margin-bottom: 0.4rem;
+                }
+                &__value {
+
+                    font-weight: bold;
+                }
+                & .material-icons {
+                    font-size: 32px;
+                    padding-right: 0.5rem;
+                }
+            }
+        }
+    }
+}
+
+.profile-picture {
+    height: 300px;
+    width: 300px;
+    position: absolute;
+    left: calc(283px - 157px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 50%;
+    border: $orange 7px solid;
+    &__image {
+        object-fit: cover;
+        min-width: 100%;
+        min-height: 100%;
+    }
+}

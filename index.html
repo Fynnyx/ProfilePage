@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel=”stylesheet” href=”https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css”>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/colors.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="https://kit.fontawesome.com/835d229a93.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="profile-picture">
+            <img src="./assets/images/profile-picture.jpg" alt="profile picture" class="profile-picture__image">
+        </div>
+        <div class="sidebar__content">
+            <div class="sidebar__content__socials">
+
+                <a href="mailto:fynn05@gmx.ch" class="sidebar__content__socials__link">
+                    <span class="sidebar__content__socials__link__icon material-icons"
+                        style="font-size: 45px;">mail</span>
+                </a>
+                <a href="https://twitter.com/fynnyx" target="_blank" class="sidebar__content__socials__link">
+                    <i class="sidebar__content__socials__link__icon fa-brands fa-twitter"></i>
+                </a>
+                <a href="https://github.com/fynnyx" target="_blank" class="sidebar__content__socials__link">
+                    <i class="sidebar__content__socials__link__icon fa-brands fa-github"></i>
+                </a>
+                <a href="https://twitter.com/Fynnyx_official" target="_blank" class="sidebar__content__socials__link">
+                    <i class="sidebar__content__socials__link__icon fa-brands fa-linkedin"></i>
+                </a>
+            </div>
+            <ul class="sidebar__content__infos">
+                <li class="sidebar__content__infos__item">
+                    <span class="sidebar__content__infos__item__title">
+                        <span class="material-icons">person</span>
+                        <span>Name:</span>
+                    </span>
+                    <span class="sidebar__content__infos__item__value">Fynn Westerath</span>
+                </li>
+                <li class="sidebar__content__infos__item">
+                    <span class="sidebar__content__infos__item__title">
+                        <span class="material-icons">calendar_month</span>
+                        <span>Birthday:</span>
+                    </span>
+                    <span id="infosBirthday" class="sidebar__content__infos__item__value"></span>
+                </li>
+                <li class="sidebar__content__infos__item">
+                    <span class="sidebar__content__infos__item__title">
+                        <span class="material-icons">phone</span>
+                        <span>Mobile:</span>
+                    </span>
+                    <span class="sidebar__content__infos__item__value">+41 78 886 04 51</span>
+                </li>
+                <li class="sidebar__content__infos__item">
+                    <span class="sidebar__content__infos__item__title">
+                        <span class="material-icons">place</span>
+                        <span>Location:</span>
+                    </span>
+                    <span class="sidebar__content__infos__item__value">Baden, CH</span>
+                </li>
+                <li class="sidebar__content__infos__item">
+                    <span class="sidebar__content__infos__item__title">
+                        <span class="material-icons">desktop_mac</span>
+                        <span>Profession:</span>
+                    </span>
+                    <span class="sidebar__content__infos__item__value">IT Developer</span>
+                </li>
+                <li class="sidebar__content__infos__item">
+                    <span class="sidebar__content__infos__item__title">
+                        <span class="material-icons">business</span>
+                        <span>Work:</span>
+                    </span>
+                    <span class="sidebar__content__infos__item__value">ETH Zurich</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="content">
+
+    </div>
+</body>
+
+</html>
+
+<script>
+    const infosBirthday = document.getElementById('infosBirthday');
+    const now = new Date();
+    const birtdayDate = new Date('3.2.2005');
+    const year = birtdayDate.getFullYear();
+    const month = birtdayDate.getMonth() + 1;
+    const day = birtdayDate.getDate();
+    infosBirthday.innerHTML = `${day}.${month}.${year} (${now.getFullYear() - 2005})`;
+</script>
