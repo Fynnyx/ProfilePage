@@ -1,13 +1,10 @@
-# Sidebar
-
+# Header
 - Image
-- personal information
-- Contacts
 - Download CV
 
 
 # Main content
-## Hey, I'm Fynn
+## About Me
 Short description about myself. What am i doing the whole day.
 
 ## Skills

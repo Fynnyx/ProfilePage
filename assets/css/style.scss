@@ -105,6 +105,10 @@ body {
             font-size: 50px;
         }
     }
+    &__image-copyright {
+        margin: 0.75rem;
+        color: #aaa;
+    }
 }
 
 .content {
@@ -117,8 +121,8 @@ body {
     0% {
         transform: translateY(0);
     }
-    60% {
-        transform: translateY(-20px);
+    65% {
+        transform: translateY(-25px);
     }
     100% {
         transform: translateY(0);
