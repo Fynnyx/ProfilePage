@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/835d229a93.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./assets/css/components/button.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>Fynn Westerath</title>
 </head>
@@ -18,7 +19,7 @@
                     <a href="#about-me">About Me</a>
                 </li>
                 <li class="navbar__list__item">
-                    <a href="#skill">Skills</a>
+                    <a href="#skills">Skills</a>
                 </li>
                 <li class="navbar__list__item">
                     <a href="#projects">Projects</a>
@@ -46,20 +47,112 @@
             <h2 id="about-me" class="about-me__title">About Me</h2>
             <img src="./assets/images/profile-picture.jpg" alt="profile picture">
             <p class="about-me__description">
-                My Name is Fynn Westerath. I am 17 years old and a Full Stack Developer currently doing an apprenticeship at ETH Zurich. I worked in various projects and I am always looking for new challenges.
+                My Name is Fynn Westerath. I am 17 years old and a Full Stack Developer currently doing an
+                apprenticeship at ETH Zurich. I worked in various projects and I am always looking for new challenges.
             </p>
             <ul class="about-me__contact">
                 <li class="about-me__contact__item">
                     <span>Name:</span><span>Fynn Westerath</span>
                 </li>
                 <li class="about-me__contact__item">
-                    <span>Mail:</span><span>fynn05@gmx.ch</span>
+                    <span>Mail:</span><a href="mailto:fynn05@gmx.ch">fynn05@gmx.ch<i
+                            class="fa-solid fa-up-right-from-square"></i></a>
+                </li>
+                <li class="about-me__contact__item">
+                    <span>Birthday:</span><span id="birthdayDate">17</span>
+                </li>
+                <li class="about-me__contact__item">
+                    <span>Adress:</span><span>Ennetbaden, Switzerland</span>
+                </li>
+                <li class="about-me__contact__item">
+                    <span>Phone:</span><a href="tel:+41 78 886 04 51">+41 78 886 04 51<i
+                            class="fa-solid fa-up-right-from-square"></i></a>
+                </li>
+                <li class="about-me__contact__item">
+                    <span>Work:</span><span>ETH Zurich</span>
                 </li>
             </ul>
             <div class="about-me__socials">
+                <a href="mailto:fynn05@gmx.ch" class="sidebar__content__socials__link">
+
+                </a>
+                <a href="https://twitter.com/Fynnyx_official" target="_blank" class="sidebar__content__socials__link">
+                    <i class="sidebar__content__socials__link__icon fa-brands fa-twitter"></i>
+                </a>
+                <a href="https://github.com/fynnyx" target="_blank" class="sidebar__content__socials__link">
+                    <i class="sidebar__content__socials__link__icon fa-brands fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/fynn-westerath-1a2372233/" target="_blank"
+                    class="sidebar__content__socials__link">
+                    <i class="sidebar__content__socials__link__icon fa-brands fa-linkedin"></i>
+                </a>
+                <a href="https://discord.com/channels/@me/451776092785737728" target="_blank"
+                    class="sidebar__content__socials__link">
+                    <i class="sidebar__content__socials__link__icon fa-brands fa-discord"></i>
+                </a>
             </div>
+        </div>
+        <div class="skills">
+            <h2 id="skills" class="skills__title">Skills</h2>
+            <p>Learned various skills. Databases like MySQL/MariaDB and InfluxDB. Python, JavaScript and Python</p>
+            <ul class="skills__list">
+                <li class="skills__list__item">
+                    <div class="skills__list__item__progress-bar">
+
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="projects">
+            <h2 id="projects" class="projects__title"> Projects</h2>
+            <p></p>
+            <ul class="projects__list">
+                <li class="projects__list__item">
+                    <div class="projects__list__item__header" style="background-image: url('./assets/images/projects/kahlifar-page.png');">
+                        <img src="./assets/images/projects/kahlfiar_logo.png" class="projects__list__item__logo" alt="">
+                    </div>
+                    <div class="projects__list__item__text">
+                        <h3 class="projects__list__item__text__title">Kahlifar community page</h3>
+                        <p class="projects__list__item__text__description">
+                            For a community i own i created a webpage. New Members can find basic information about the
+                            community and who we are. It is created with NuxtJS.
+                            <br><a href="https://kahlifar.de" target="_blank">kahlifar.de</a>
+                        </p>
+                        <a href="https://github.com/Fynnyx/KahlifarWebsite"
+                            class="projects__list__item__text__repo">GitHub Repository
+                            <i class="fa-solid fa-up-right-from-square"></i>
+                        </a>
+                    </div>
+                </li>
+                <li class="projects__list__item">
+                    <!-- <img src="" class="projects__list__item__header-image" alt=""> -->
+                    <div class="projects__list__item__header" style="background-image: url('./assets/images/projects/kahlifarbots.png');">
+                        <img src="./assets/images/projects/kahlfiar_logo.png" class="projects__list__item__logo" alt="">
+                    </div>
+                    <div class="projects__list__item__text">
+                        <h3 class="projects__list__item__text__title">Kahlifar Discord bots</h3>
+                        <p class="projects__list__item__text__description">
+                            The community uses bots to use a few quality of life features and to get custom security
+                            defences. The bots are written in NodeJs and use the discord.js library. A custom command
+                            and event handler is used to make it easy to add new commands and maintain the bot.
+                        </p>
+                        <a href="https://github.com/Fynnyx/KahlifarBots"
+                            class="projects__list__item__text__repo">GitHub Repository
+                            <i class="fa-solid fa-up-right-from-square"></i>
+                        </a>
+                    </div>
+                </li>
+            </ul>
         </div>
     </div>
 </body>
 
 </html>
+<script>
+
+    const birthdayElement = document.getElementById("birthdayDate");
+    const date = new Date();
+    const birthdayDate = new Date("3. Feb 2005")
+    birthdayElement.innerHTML = `${birthdayDate.getDate()}.${birthdayDate.getMonth() + 1}.${birthdayDate.getFullYear()} (${date.getFullYear() - birthdayDate.getFullYear()})`;
+
+</script>

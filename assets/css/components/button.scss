@@ -10,7 +10,7 @@ button.button {
         font-weight: 550;
         height: max-content;
         &:hover {
-            // background-color: $dark-orange;
+            background-color: lighten($orange, 5%);
             cursor: pointer;
         }
     }

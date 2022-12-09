@@ -1,19 +1,4 @@
 @charset "UTF-8";
-button.button--primary {
-  background-color: #ff6600;
-  color: #02111b;
-  border: none;
-  padding: 0.75rem;
-  font-size: 20px;
-  font-weight: 550;
-  height: -webkit-max-content;
-  height: -moz-max-content;
-  height: max-content;
-}
-button.button--primary:hover {
-  cursor: pointer;
-}
-
 * {
   font-family: "Open Sans", sans-serif;
   color: white;
@@ -38,12 +23,18 @@ body {
 }
 
 h2 {
+  font-size: 26px;
   border-bottom: #ff6600 solid 2px;
   padding-bottom: 0.5rem;
   margin-bottom: 1rem;
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
+}
+
+h3 {
+  padding: 0;
+  margin: 0;
 }
 
 .header {
@@ -144,15 +135,20 @@ h2 {
 
 .content {
   display: flex;
+  flex-direction: column;
+  gap: 3rem;
   padding: 6rem;
+  margin-bottom: 100px;
 }
 .content .about-me {
+  width: 70rem;
   display: grid;
+  align-self: center;
   -moz-column-gap: 1rem;
        column-gap: 1rem;
   row-gap: 1rem;
-  justify-items: center;
-  width: 55rem;
+  justify-items: start;
+  padding-right: 1rem;
   background-color: #042033;
 }
 .content .about-me__title {
@@ -160,37 +156,132 @@ h2 {
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
-  justify-self: start;
 }
 .content .about-me img {
   grid-column: 1;
-  grid-row: 1/5;
+  grid-row: 1/6;
   order: 0;
   height: 500px;
-  width: 28vw;
+  width: 400px;
   -o-object-fit: cover;
      object-fit: cover;
 }
 .content .about-me__description {
   grid-column: 2;
+  font-size: 19px;
 }
 .content .about-me__contact {
+  border-radius: 20px;
   grid-column: 2;
+  grid-row-start: 3;
+  grid-row-end: 5;
+  justify-self: center;
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
   list-style: none;
+  padding: 1.5rem 1rem;
 }
 .content .about-me__contact__item {
-  font-size: 18px;
+  font-size: 20px;
+  width: 49%;
 }
 .content .about-me__contact__item span:first-child {
   font-weight: bold;
   color: #ff6600;
-  margin-right: 1rem;
+  margin-right: 0.25rem;
+}
+.content .about-me__contact__item i {
+  margin-left: 0.5rem;
+  font-size: 15px;
 }
 .content .about-me__socials {
   grid-column: 2;
+}
+.content .about-me__socials a {
+  text-decoration: none;
+  margin-right: 0.75rem;
+}
+.content .about-me__socials a i {
+  font-size: 40px;
+}
+.content .skills__list {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+}
+.content .skills__list__item {
+  width: 300px;
+  height: 250px;
+  background-color: #042033;
+}
+.content .skills__list__item__progress-bar {
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  border: green 4px solid;
+}
+.content .projects__list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1.5rem;
+}
+.content .projects__list__item {
+  width: 300px;
+  background-color: #042033;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.content .projects__list__item:hover {
+  transform: scale(1.025);
+}
+.content .projects__list__item__header {
+  height: 100px;
+  width: 100%;
+  background-size: cover;
+}
+.content .projects__list__item__logo {
+  position: relative;
+  left: calc(50% - 60px);
+  top: 45px;
+  height: 100px;
+  width: 100px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+  border: #042033 5px solid;
+}
+.content .projects__list__item__text {
+  display: flex;
+  flex-direction: column;
+  height: 250px;
+  margin: 1rem;
+  margin-top: 4.5rem;
+}
+.content .projects__list__item__text__title {
+  align-self: center;
+}
+.content .projects__list__item__text__description {
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+  word-wrap: break-word;
+}
+.content .projects__list__item__text__description a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #ff6600;
+}
+.content .projects__list__item__text__repo {
+  align-self: flex-end;
+  margin-top: auto;
 }
 
 @-webkit-keyframes bounce {
