@@ -234,7 +234,7 @@ h3 {
   gap: 1.5rem;
 }
 .content .projects__list__item {
-  width: 300px;
+  width: 300px !important;
   background-color: #042033;
   border-radius: 20px;
   overflow: hidden;
@@ -257,6 +257,7 @@ h3 {
      object-fit: cover;
   border-radius: 50%;
   border: #042033 5px solid;
+  background-color: #042033;
 }
 .content .projects__list__item__text {
   display: flex;

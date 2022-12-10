@@ -119,6 +119,7 @@
                             <br><a href="https://kahlifar.de" target="_blank">kahlifar.de</a>
                         </p>
                         <a href="https://github.com/Fynnyx/KahlifarWebsite"
+                        target="_blank"
                             class="projects__list__item__text__repo">GitHub Repository
                             <i class="fa-solid fa-up-right-from-square"></i>
                         </a>
@@ -137,9 +138,28 @@
                             and event handler is used to make it easy to add new commands and maintain the bot.
                         </p>
                         <a href="https://github.com/Fynnyx/KahlifarBots"
+                            target="_blank"
                             class="projects__list__item__text__repo">GitHub Repository
                             <i class="fa-solid fa-up-right-from-square"></i>
                         </a>
+                    </div>
+                </li>
+                <li class="projects__list__item">
+                    <!-- <img src="" class="projects__list__item__header-image" alt=""> -->
+                    <div class="projects__list__item__header" style="background-image: url('./assets/images/projects/piazzapiante-page.png');">
+                        <img src="./assets/images/projects/piazzapiante-logo-light.png" class="projects__list__item__logo" alt="">
+                    </div>
+                    <div class="projects__list__item__text">
+                        <h3 class="projects__list__item__text__title">PiazzaPiante</h3>
+                        <p class="projects__list__item__text__description">
+                            As a member of the local scout group i created a webpage for the celebration of the 100th year of the city festival. It shows visitors what they can expect and who we are. It uses the PHP backend Statamic and PHP atlassian as the frontend.
+                            <br><a href="https://jugendwelt23.ch" target="_blank">jugendwelt23.de</a>
+                        </p>
+                        <!-- <a href="https://gitlab.com/ansovi/piazzapiante"
+                            target="_blank"
+                            class="projects__list__item__text__repo">GitLab Repository
+                            <i class="fa-solid fa-up-right-from-square"></i>
+                        </a> -->
                     </div>
                 </li>
             </ul>
@@ -154,5 +174,9 @@
     const date = new Date();
     const birthdayDate = new Date("3. Feb 2005")
     birthdayElement.innerHTML = `${birthdayDate.getDate()}.${birthdayDate.getMonth() + 1}.${birthdayDate.getFullYear()} (${date.getFullYear() - birthdayDate.getFullYear()})`;
+
+    function downloadCV() {
+        window.open("./assets/cv.pdf", "_blank");
+    }
 
 </script>
