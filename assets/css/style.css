@@ -27,7 +27,6 @@ h2 {
   border-bottom: #ff6600 solid 2px;
   padding-bottom: 0.5rem;
   margin-bottom: 1rem;
-  width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
 }
@@ -122,8 +121,7 @@ h3 {
   background-color: #02111b;
   align-self: center;
   margin-bottom: 1rem;
-  -webkit-animation: bounce 2s infinite;
-          animation: bounce 2s infinite;
+  animation: bounce 2s infinite;
 }
 .header__arrow__icon {
   font-size: 50px;
@@ -153,7 +151,6 @@ h3 {
 }
 .content .about-me__title {
   grid-column: 2;
-  height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
 }
@@ -208,33 +205,67 @@ h3 {
 .content .about-me__socials a i {
   font-size: 40px;
 }
+.content .about-me__socials a i:hover {
+  color: #ff6600;
+}
 .content .skills__list {
   display: flex;
+  gap: 1rem;
   justify-content: center;
   list-style: none;
   padding: 0;
 }
 .content .skills__list__item {
-  width: 300px;
+  display: grid;
+  width: 30rem;
+  min-width: 30rem;
   height: 250px;
   background-color: #042033;
+  padding: 1rem;
 }
 .content .skills__list__item__progress-bar {
+  grid-column: 1;
+  grid-row: 1;
+  grid-area: description;
   height: 120px;
   width: 120px;
   border-radius: 50%;
   border: green 4px solid;
+}
+.content .skills__list__item__title {
+  grid-column: 2;
+  grid-row: 1;
+  grid-area: title;
+  font-size: 30px;
+  font-weight: bold;
+  color: #ff6600;
+  margin: 0;
+  padding: 0;
+}
+.content .skills__list__item__title:hover {
+  text-decoration: underline;
+}
+.content .skills__list__item__description {
+  grid-column: 1/2;
+  grid-row: 3;
+  grid-area: description;
+  font-size: 15px;
+  color: white;
+  margin: 0;
+  padding: 0;
 }
 .content .projects__list {
   list-style: none;
   padding: 0;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 1.5rem;
 }
 .content .projects__list__item {
   width: 300px !important;
+  min-width: 300px;
   background-color: #042033;
   border-radius: 20px;
   overflow: hidden;
@@ -271,7 +302,6 @@ h3 {
 }
 .content .projects__list__item__text__description {
   -webkit-hyphens: auto;
-      -ms-hyphens: auto;
           hyphens: auto;
   word-wrap: break-word;
 }
@@ -283,18 +313,6 @@ h3 {
 .content .projects__list__item__text__repo {
   align-self: flex-end;
   margin-top: auto;
-}
-
-@-webkit-keyframes bounce {
-  0% {
-    transform: translateY(0);
-  }
-  65% {
-    transform: translateY(-25px);
-  }
-  100% {
-    transform: translateY(0);
-  }
 }
 
 @keyframes bounce {

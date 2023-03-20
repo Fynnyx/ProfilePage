@@ -208,6 +208,9 @@ h3 {
                 & i {
                     font-size: 40px;
                 }
+                & i:hover {
+                    color: $orange;
+                }
             }
         }
     }
@@ -215,18 +218,48 @@ h3 {
     & .skills {
         &__list {
             display: flex;
+            gap: 1rem;
             justify-content: center;
             list-style: none;
             padding: 0;
             &__item {
-                width: 300px;
+                display: grid;
+                width: 30rem;
+                min-width: 30rem;
                 height: 250px;
                 background-color: $dark-blue-95;
+                padding: 1rem;
                 &__progress-bar {
+                    grid-column: 1;
+                    grid-row: 1;
+                    grid-area: description;
                     height: 120px;
                     width:  120px;
                     border-radius: 50%;
                     border: green 4px solid;
+                }
+                &__title {
+                    grid-column: 2;
+                    grid-row: 1;
+                    grid-area: title;
+                    font-size: 30px;
+                    font-weight: bold;
+                    color: $orange;
+                    margin: 0;
+                    padding: 0;
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+
+                &__description {
+                    grid-column: 1/2;
+                    grid-row: 3;
+                    grid-area: description;
+                    font-size: 15px;
+                    color: white;
+                    margin: 0;
+                    padding: 0;
                 }
             }
         }
@@ -238,10 +271,12 @@ h3 {
             padding: 0;
             display: flex;
             flex-direction: row;
+            flex-wrap: wrap;
             justify-content: center;
             gap: 1.5rem;
             &__item {
                 width: 300px !important;
+                min-width: 300px;
                 background-color: $dark-blue-95;
                 border-radius: 20px;
                 overflow: hidden;

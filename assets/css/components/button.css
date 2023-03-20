@@ -5,7 +5,6 @@ button.button--primary {
   padding: 0.75rem;
   font-size: 20px;
   font-weight: 550;
-  height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
 }
