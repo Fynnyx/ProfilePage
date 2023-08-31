@@ -45,8 +45,8 @@ h3 {
     flex-direction: column;
     width: 100vw;
     height: 100vh;
-    // background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url(../images/britanniahütte.jpg);
-    background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url(../images/zug.jpg);
+    background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url(../images/britanniahütte.jpg);
+    // background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url(../images/zug.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -54,6 +54,8 @@ h3 {
     // overflow: auto;
     & .navbar {
         display: flex;
+        position: fixed;
+        top: 0;
         width: 100%;
         &__list {
             display: flex;
@@ -93,6 +95,7 @@ h3 {
         justify-content: center;
         flex-direction: column;
         height: 100%;
+        margin-top: 70px !important;
         & img {
             height: 230px;
             width: 230px;
