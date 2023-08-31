@@ -1,4 +1,5 @@
 @import "./vars.scss";
+@import "./components/circle.css";
 
 // * Config
 * {
@@ -44,7 +45,8 @@ h3 {
     flex-direction: column;
     width: 100vw;
     height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url(../images/britanniahütte.jpg);
+    // background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url(../images/britanniahütte.jpg);
+    background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url(../images/zug.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -217,51 +219,58 @@ h3 {
 
     & .skills {
         &__list {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
             list-style: none;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: start;
+            gap: 1.5rem;
             padding: 0;
             &__item {
-                display: grid;
-                width: 30rem;
-                min-width: 30rem;
-                height: 250px;
+                width: 500px;
+                height: auto;
                 background-color: $dark-blue-95;
+                display: grid;
+                grid-template-columns: 1fr 2fr;
+                grid-template-rows: 1fr auto;
+                grid-template-areas:
+                    "progress-bar text"
+                    "progress-bar description";
                 padding: 1rem;
-                &__progress-bar {
-                    grid-column: 1;
-                    grid-row: 1;
-                    grid-area: description;
-                    height: 120px;
-                    width:  120px;
-                    border-radius: 50%;
-                    border: green 4px solid;
+                overflow: hidden;
+                &:hover {
+                    transform: scale(1.025);
                 }
-                &__title {
-                    grid-column: 2;
-                    grid-row: 1;
-                    grid-area: title;
-                    font-size: 30px;
-                    font-weight: bold;
-                    color: $orange;
-                    margin: 0;
-                    padding: 0;
-                    &:hover {
-                        text-decoration: underline;
+                &__progress-bar {
+                    grid-area: progress-bar;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    & > div {
+                        margin: 0 !important;
                     }
                 }
+                &__title {
+                    grid-area: text; /* Placing the title in the second column and first row */
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: start;
+                    font-size: 24px;
+                    font-weight: bold;
+                    color: $orange;
 
-                &__description {
-                    grid-column: 1/2;
-                    grid-row: 3;
-                    grid-area: description;
-                    font-size: 15px;
-                    color: white;
-                    margin: 0;
-                    padding: 0;
                 }
-            }
+            
+                &__description {
+                    grid-area: description; /* Keeping the description in the second column and second row */
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 18px;
+                }
+            }            
         }
     }
 

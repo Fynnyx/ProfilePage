@@ -1,4 +1,4 @@
-@charset "UTF-8";
+@import "./components/circle.css";
 * {
   font-family: "Open Sans", sans-serif;
   color: white;
@@ -41,7 +41,7 @@ h3 {
   flex-direction: column;
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url(../images/britanniahütte.jpg);
+  background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url(../images/zug.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -209,50 +209,54 @@ h3 {
   color: #ff6600;
 }
 .content .skills__list {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
   list-style: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: start;
+  gap: 1.5rem;
   padding: 0;
 }
 .content .skills__list__item {
-  display: grid;
-  width: 30rem;
-  min-width: 30rem;
-  height: 250px;
+  width: 500px;
+  height: auto;
   background-color: #042033;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr auto;
+  grid-template-areas: "progress-bar text" "progress-bar description";
   padding: 1rem;
+  overflow: hidden;
+}
+.content .skills__list__item:hover {
+  transform: scale(1.025);
 }
 .content .skills__list__item__progress-bar {
-  grid-column: 1;
-  grid-row: 1;
-  grid-area: description;
-  height: 120px;
-  width: 120px;
-  border-radius: 50%;
-  border: green 4px solid;
+  grid-area: progress-bar;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.content .skills__list__item__progress-bar > div {
+  margin: 0 !important;
 }
 .content .skills__list__item__title {
-  grid-column: 2;
-  grid-row: 1;
-  grid-area: title;
-  font-size: 30px;
+  grid-area: text; /* Placing the title in the second column and first row */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  font-size: 24px;
   font-weight: bold;
   color: #ff6600;
-  margin: 0;
-  padding: 0;
-}
-.content .skills__list__item__title:hover {
-  text-decoration: underline;
 }
 .content .skills__list__item__description {
-  grid-column: 1/2;
-  grid-row: 3;
-  grid-area: description;
-  font-size: 15px;
-  color: white;
-  margin: 0;
-  padding: 0;
+  grid-area: description; /* Keeping the description in the second column and second row */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
 }
 .content .projects__list {
   list-style: none;
