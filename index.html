@@ -13,7 +13,7 @@
 
 <body>
     <header class="header">
-        <nav class="navbar">
+        <nav class="navbar" style="backdrop-filter: unset; box-shadow: unset;">
             <ul class="navbar__list">
                 <li class="navbar__list__item">
                     <a href="#about-me">About Me</a>
@@ -24,10 +24,13 @@
                 <li class="navbar__list__item">
                     <a href="#projects">Projects</a>
                 </li>
-                <button id="downloadCV" class="button button--primary">
-                    Download CV
-                    <i class="fa-solid fa-file-arrow-down"></i>
-                </button>
+                |
+                <li class="navbar__list__item">
+                    <a href="/documents.html">Documents</a>
+                </li>
+                <li class="navbar__list__item">
+                    <a href="/gallery.html">Gallery</a>
+                </li>
             </ul>
         </nav>
         <div class="header__content">
@@ -47,8 +50,9 @@
             <h2 id="about-me" class="about-me__title">About Me</h2>
             <img src="./assets/images/profile-picture.jpg" alt="profile picture">
             <p class="about-me__description">
-                My Name is Fynn Westerath. I am 17 years old and a Full Stack Developer currently doing an
-                apprenticeship at ETH Zurich. I worked in various projects and I am always looking for new challenges.
+                My Name is Fynn Westerath. I am currently doing an apprenticeship at ETH Zurich. I worked in various projects and I am always looking for new challenges. <br>
+                I am a member of the scout group Hochwacht Baden. I plan Saturday activities and camps for the scouts. <br>
+                Recently I started to take pictures. I am still learning and I am looking forward to improve my skills.
             </p>
             <ul class="about-me__contact">
                 <li class="about-me__contact__item">
@@ -73,9 +77,7 @@
                 </li>
             </ul>
             <div class="about-me__socials">
-                <a href="mailto:fynn05@gmx.ch" class="sidebar__content__socials__link">
-
-                </a>
+                <a href="mailto:fynn05@gmx.ch" class="sidebar__content__socials__link"></a>
                 <a href="https://twitter.com/Fynnyx_official" target="_blank" class="sidebar__content__socials__link">
                     <i class="sidebar__content__socials__link__icon fa-brands fa-twitter"></i>
                 </a>
@@ -86,15 +88,29 @@
                     class="sidebar__content__socials__link">
                     <i class="sidebar__content__socials__link__icon fa-brands fa-linkedin"></i>
                 </a>
-                <a href="https://discord.com/channels/@me/451776092785737728" target="_blank"
+                <a href="https://discord.com/" target="_blank"
                     class="sidebar__content__socials__link">
                     <i class="sidebar__content__socials__link__icon fa-brands fa-discord"></i>
+                </a>
+                <a href="https://unsplash.com/@fynnyx" target="_blank"
+                    class="sidebar__content__socials__link">
+                    <i class="sidebar__content__socials__link__icon fa-brands fa-unsplash"></i>
                 </a>
             </div>
         </div>
         <div class="skills">
             <h2 id="skills" class="skills__title">Skills</h2>
-            <p>Learned various skills. Databases like MySQL/MariaDB and InfluxDB. Python, JavaScript and Python</p>
+            <p>Learned various skills over the past years. Started with basic programming with Python. <br>
+                I advanced to web development and created my first websites. I improved my skills in my second apprenticeship year in web development (HTML, CSS, JavaScript (Vue, NuxtJS), Node.js). <br>
+                In this year I had the first contact with Git and how to use it in a team environment. <br>
+                Then my first project with Java came from school and I used the knowledge I gained to create a whole service for my online community. Using the following technology stack...
+                <ul>
+                    <li>Webpage (NuxtJS)</li>
+                    <li>CMS (Strapi)</li>
+                    <li>Discord bots (Node.js)</li>
+                    <li>API (SpringBoot)</li>
+                </ul>
+            </p>
             <ul class="skills__list">
                 <li class="skills__list__item">
                     <div class="skills__list__item__progress-bar">
@@ -123,11 +139,122 @@
                     </div>
                     <span class="skills__list__item__title">CSS</span>
                     <p class="skills__list__item__description">
-                        I have been working with CSS for a long time. I have created many websites and webpages.
+                        I created many websites and webpages with CSS. I am familiar with the most common CSS and write my own CSS.
+                    </p>
+                </li>
+                <li class="skills__list__item">
+                    <div class="skills__list__item__progress-bar">
+                        <div class="c100 dark p78">
+                            <span>78%</span>
+                            <div class="slice">
+                                <div class="bar"></div>
+                                <div class="fill"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="skills__list__item__title">JavaScript</span>
+                    <p class="skills__list__item__description">
+                        I've utilized JavaScript for web development and Node.js to create Discord bots and other applications using JavaScript frameworks.                    </p>
+                </li>
+                <!-- Add Python skill -->
+                <li class="skills__list__item">
+                    <div class="skills__list__item__progress-bar">
+                        <div class="c100 dark p74"> <!-- Adjust the percentage here -->
+                            <span>74%</span>
+                            <div class="slice">
+                                <div class="bar"></div>
+                                <div class="fill"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="skills__list__item__title">Python</span>
+                    <p class="skills__list__item__description">
+                        I am proficient in Python and have extensive experience.
+                    </p>
+                </li>
+                <!-- Add Java skill -->
+                <li class="skills__list__item">
+                    <div class="skills__list__item__progress-bar">
+                        <div class="c100 dark p68"> <!-- Adjust the percentage here -->
+                            <span>68%</span>
+                            <div class="slice">
+                                <div class="bar"></div>
+                                <div class="fill"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="skills__list__item__title">Java</span>
+                    <p class="skills__list__item__description">
+                        I have experience with Java programming.
+                    </p>
+                </li>
+                <!-- Add NuxtJS skill -->
+                <li class="skills__list__item">
+                    <div class="skills__list__item__progress-bar">
+                        <div class="c100 dark p44"> <!-- Adjust the percentage here -->
+                            <span>44%</span>
+                            <div class="slice">
+                                <div class="bar"></div>
+                                <div class="fill"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="skills__list__item__title">NuxtJS</span>
+                    <p class="skills__list__item__description">
+                        I have some experience with NuxtJS.
+                    </p>
+                </li>
+                <!-- Add Sass skill -->
+                <li class="skills__list__item">
+                    <div class="skills__list__item__progress-bar">
+                        <div class="c100 dark p42"> <!-- Adjust the percentage here -->
+                            <span>42%</span>
+                            <div class="slice">
+                                <div class="bar"></div>
+                                <div class="fill"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="skills__list__item__title">Sass</span>
+                    <p class="skills__list__item__description">
+                        I have some experience with Sass.
+                    </p>
+                </li>
+                <!-- Add Git skill -->
+                <li class="skills__list__item">
+                    <div class="skills__list__item__progress-bar">
+                        <div class="c100 dark p59"> <!-- Adjust the percentage here -->
+                            <span>59%</span>
+                            <div class="slice">
+                                <div class="bar"></div>
+                                <div class="fill"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="skills__list__item__title">Git</span>
+                    <p class="skills__list__item__description">
+                        I am familiar with Git for version control.
+                    </p>
+                </li>
+                <!-- Add Linux skill -->
+                <li class="skills__list__item">
+                    <div class="skills__list__item__progress-bar">
+                        <div class="c100 dark p50"> <!-- Adjust the percentage here -->
+                            <span>50%</span>
+                            <div class="slice">
+                                <div class="bar"></div>
+                                <div class="fill"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="skills__list__item__title">Linux</span>
+                    <p class="skills__list__item__description">
+                        I have experience with the Linux operating system.
                     </p>
                 </li>
             </ul>
         </div>
+        
         
         <div class="projects">
             <h2 id="projects" class="projects__title"> Projects</h2>
@@ -194,6 +321,7 @@
 </body>
 
 </html>
+<script src="assets/js/navbar-behavior.js"></script>
 <script>
 
     const birthdayElement = document.getElementById("birthdayDate");

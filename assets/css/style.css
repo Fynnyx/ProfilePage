@@ -6,7 +6,14 @@
 }
 
 ::-webkit-scrollbar {
-  display: none;
+  width: 10px;
+  height: 10px;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #ff6600;
+  border-radius: 10px;
 }
 
 i {
@@ -37,10 +44,18 @@ h3 {
   margin: 0;
 }
 
+p ul li {
+  list-style: none;
+}
+p ul li::before {
+  content: "-";
+  padding-right: 0.5rem;
+}
+
 .header {
   display: flex;
   flex-direction: column;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url(../images/britanniahütte.jpg);
   background-position: center;
@@ -48,50 +63,12 @@ h3 {
   background-size: cover;
   box-shadow: inset 0 0 10000px black;
 }
-.header .navbar {
-  display: flex;
-  position: fixed;
-  top: 0;
-  width: 100%;
-}
-.header .navbar__list {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin: 0 6rem;
-  margin-left: auto;
-  list-style: none;
-}
-.header .navbar__list__item {
-  display: flex;
-  align-items: center;
-  font-size: 18px;
-  border-bottom: transparent solid 2px;
-}
-.header .navbar__list__item:hover {
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  cursor: pointer;
-  border-bottom: #ff6600 solid 2px;
-  background-color: rgba(255, 255, 255, 0.1);
-}
-.header .navbar__list__item > a {
-  padding: 1.5rem 1rem 1rem 1rem;
-  color: inherit;
-  text-decoration: none;
-}
-.header .navbar__list #downloadCV {
-  margin-left: 2rem;
-  margin-top: 0.6rem;
-}
 .header__content {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   height: 100%;
-  margin-top: 70px !important;
 }
 .header__content img {
   height: 230px;
@@ -135,6 +112,49 @@ h3 {
   color: #aaa;
 }
 
+.navbar {
+  display: flex;
+  width: 100%;
+  z-index: 50;
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+.navbar.scrolled {
+  -webkit-backdrop-filter: blur(20px) !important;
+          backdrop-filter: blur(20px) !important;
+  position: fixed;
+  top: 0;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2) !important;
+}
+.navbar__list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0 6rem;
+  margin-left: auto;
+  list-style: none;
+}
+.navbar__list__item {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  border-bottom: transparent solid 2px;
+}
+.navbar__list__item:hover {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  cursor: pointer;
+  border-bottom: #ff6600 solid 2px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.navbar__list__item > a {
+  padding: 1.5rem 1rem 1rem 1rem;
+  color: inherit;
+  text-decoration: none;
+}
+
 .content {
   display: flex;
   flex-direction: column;
@@ -148,9 +168,7 @@ h3 {
   align-self: center;
   -moz-column-gap: 1rem;
        column-gap: 1rem;
-  row-gap: 1rem;
   justify-items: start;
-  padding-right: 1rem;
   background-color: #042033;
 }
 .content .about-me__title {
@@ -162,7 +180,7 @@ h3 {
   grid-column: 1;
   grid-row: 1/6;
   order: 0;
-  height: 500px;
+  height: 100%;
   width: 400px;
   -o-object-fit: cover;
      object-fit: cover;
@@ -201,6 +219,7 @@ h3 {
 }
 .content .about-me__socials {
   grid-column: 2;
+  margin: 0.75rem 0;
 }
 .content .about-me__socials a {
   text-decoration: none;
@@ -223,17 +242,13 @@ h3 {
 }
 .content .skills__list__item {
   width: 500px;
-  height: auto;
+  height: 130px;
   background-color: #042033;
   display: grid;
   grid-template-columns: 1fr 2fr;
   grid-template-rows: 1fr auto;
   grid-template-areas: "progress-bar text" "progress-bar description";
   padding: 1rem;
-  overflow: hidden;
-}
-.content .skills__list__item:hover {
-  transform: scale(1.025);
 }
 .content .skills__list__item__progress-bar {
   grid-area: progress-bar;
@@ -245,7 +260,7 @@ h3 {
   margin: 0 !important;
 }
 .content .skills__list__item__title {
-  grid-area: text; /* Placing the title in the second column and first row */
+  grid-area: text;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -255,12 +270,13 @@ h3 {
   color: #ff6600;
 }
 .content .skills__list__item__description {
-  grid-area: description; /* Keeping the description in the second column and second row */
+  grid-area: description;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   font-size: 18px;
+  text-overflow: ellipsis;
 }
 .content .projects__list {
   list-style: none;

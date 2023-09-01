@@ -1,6 +1,5 @@
 # Header
 - Image
-- Download CV
 
 
 # Main content
@@ -17,3 +16,6 @@ Short description about myself. What am i doing the whole day.
   - Website
 - The Profile Page
 
+# Gallery Page
+
+# Document Page
