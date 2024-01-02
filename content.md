@@ -7,13 +7,14 @@
 ## About Me
 Short description about myself. What am i doing the whole day.
 
-## Skills
+## Contact
 
 
 ## Projects
-
 - Kahlifar
   - Discord Bots
   - Website
 - The Profile Page
+- BrosMC Website
+- Hochwacht Baden Page
 

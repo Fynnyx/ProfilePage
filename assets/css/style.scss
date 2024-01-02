@@ -1,4 +1,4 @@
-@import "./vars.scss";
+@import "./vars";
 
 // * Config
 * {
@@ -6,339 +6,104 @@
     color: white;
 }
 
-// hide scroll bar
-::-webkit-scrollbar {
-    display: none;
-}
-
-i {
-    color: inherit;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-// * Styling
 body {
-    background-color: $dark-blue;
+    background-color: $grey-140;
     margin: 0;
     padding: 0;
 }
 
-h2 {
-    font-size: 26px;
-    border-bottom: $orange solid 2px;
-    padding-bottom: 0.5rem;
-    margin-bottom: 1rem;
-    width: max-content;
-}
-
-h3 {
-    padding: 0; 
-    margin: 0;
-}
-
-.header {
-    display: flex;
-    flex-direction: column;
+.default-container {
+    position: relative;
+    // Full screen
     width: 100vw;
     height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url(../images/britanniahütte.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    box-shadow: inset 0 0 10000px black;
-    // overflow: auto;
-    & .navbar {
-        display: flex;
-        width: 100%;
-        &__list {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            margin: 0 $side-margin;
-            margin-left: auto;
-            list-style: none;
-            &__item {
-                display: flex;
-                align-items: center;
-                font-size: 18px;
-                border-bottom: transparent solid 2px;
-                &:hover {
-                    box-sizing: border-box;
-                    -moz-box-sizing: border-box;
-                    -webkit-box-sizing: border-box;
-                    cursor: pointer;
-                    border-bottom: $orange solid 2px;
-                    background-color: rgba($color: white, $alpha: 0.1);
-                }
-                & > a {
-                    padding: 1.5rem 1rem 1rem 1rem;
-                    color: inherit;
-                    text-decoration: none;
-                }
-            }
-            #downloadCV {
-                margin-left: 2rem;
-                margin-top: 0.6rem;
-            }
-        }
-    }
-    &__content {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        height: 100%;
-        & img {
-            height: 230px;
-            width: 230px;
-            object-fit: cover;
-            border-radius: 50%;
-            border: $orange 4px solid;
-            padding: 4px;
-            margin-bottom: 1.5rem;
-        }
-
-        & .name {
-            font-size: 3rem;
-            font-weight: 700;
-            color: $orange;
-            margin: 0;
-            padding: 0;
-        }
-        & .profession {
-            font-size: 1.5rem;
-            color: white;
-        }
-    }
-    &__arrow {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 90px;
-        height: 90px;
-        min-height: 90px;
-        border-radius: 50%;
-        background-color: $dark-blue;
-        align-self: center;
-        margin-bottom: 1rem;
-        animation: bounce 2s infinite;
-        &__icon {
-            font-size: 50px;
-        }
-    }
-    &__image-copyright {
-        margin: 0.75rem;
-        color: #aaa;
-    }
+    overflow: hidden;
 }
 
-.content {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-    padding: $side-margin;
-    margin-bottom: 100px;
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $grey-140;
+    z-index: 1;
 
-    & .about-me {
-        width: 70rem;
-        display: grid;
-        align-self: center;
-        column-gap: 1rem;
-        row-gap: 1rem;
-        justify-items: start;
-        padding-right: 1rem;
-        background-color: $dark-blue-95;
-        &__title {
-            grid-column: 2;
-            height: max-content;
+    .project-list {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
+        &__lane {
+            height: 100%;
+            width: calc(100vw + #{$project-card-width});
+            padding: 1rem;
+            display: flex;
+            gap: 1rem;
+            flex-direction: row;
         }
-        & img {
-            grid-column: 1;
-            grid-row: 1/6;
-            order: 0;
-            height: 500px;
-            width: 400px;
-            object-fit: cover;
+    }
+
+    .project-card {
+        background-color: $grey-120;
+        border-radius: 0.5rem;
+        padding: 1rem;
+        margin-bottom: 1rem;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+        height: 100%;
+        width: $project-card-width;
+        animation: scrollLane 15s linear infinite;
+
+        @keyframes scrollLane {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%); /* Adjust the percentage based on the number of cards */
+            }
+        }
+
+        &:hover {
+            transform: scale(1.01);
+        }
+
+        &__title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
         }
 
         &__description {
-            grid-column: 2;
-            font-size: 19px;
+            font-size: 1rem;
+            font-weight: 400;
+            margin-bottom: 0.5rem;
         }
 
-        &__contact {
-            // border: $orange 2px solid;
-            border-radius: 20px;
-            grid-column: 2;
-            grid-row-start: 3;
-            grid-row-end: 5;
-            justify-self: center;
+        &__tags {
             display: flex;
             flex-wrap: wrap;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            list-style: none;
-            padding: 1.5rem 1rem;
+            margin-bottom: 0.5rem;
 
-            &__item {
-                font-size: 20px;
-                width: 49%;
-                & span:first-child {
-                    font-weight: bold;
-                    color: $orange;
-                    margin-right: 0.25rem;
-                }
-
-                & i {
-                    margin-left: 0.5rem;
-                    font-size: 15px;
-                }
-            }
-        }
-        &__socials {
-            grid-column: 2;
-            & a {
-                text-decoration: none;
-                margin-right: 0.75rem;
-                & i {
-                    font-size: 40px;
-                }
-                & i:hover {
-                    color: $orange;
-                }
-            }
-        }
-    }
-
-    & .skills {
-        &__list {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            list-style: none;
-            padding: 0;
-            &__item {
-                display: grid;
-                width: 30rem;
-                min-width: 30rem;
-                height: 250px;
-                background-color: $dark-blue-95;
-                padding: 1rem;
-                &__progress-bar {
-                    grid-column: 1;
-                    grid-row: 1;
-                    grid-area: description;
-                    height: 120px;
-                    width:  120px;
-                    border-radius: 50%;
-                    border: green 4px solid;
-                }
-                &__title {
-                    grid-column: 2;
-                    grid-row: 1;
-                    grid-area: title;
-                    font-size: 30px;
-                    font-weight: bold;
-                    color: $orange;
-                    margin: 0;
-                    padding: 0;
-                    &:hover {
-                        text-decoration: underline;
-                    }
-                }
-
-                &__description {
-                    grid-column: 1/2;
-                    grid-row: 3;
-                    grid-area: description;
-                    font-size: 15px;
-                    color: white;
-                    margin: 0;
-                    padding: 0;
-                }
-            }
-        }
-    }
-
-    & .projects {
-        &__list {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1.5rem;
-            &__item {
-                width: 300px !important;
-                min-width: 300px;
-                background-color: $dark-blue-95;
-                border-radius: 20px;
-                overflow: hidden;
-
-                &:hover {
-                    transform: scale(1.025);
-                }
-
-                &__header {
-                    height: 100px;
-                    width: 100%;
-                    background-size: cover;
-                }
-                &__logo {
-                    position: relative;
-                    left: calc(50% - 60px);
-                    top: 45px;
-                    height: 100px;
-                    width: 100px;
-                    object-fit: cover;
-                    border-radius: 50%;
-                    border: $dark-blue-95 5px solid;
-                    background-color: $dark-blue-95;
-                }
-                &__text {
-                    display: flex;
-                    flex-direction: column;
-                    height: 250px;
-                    margin: 1rem;
-                    margin-top: 4.5rem;
-                    &__title {
-                        align-self: center;
-                    }
-                    &__description {
-                        hyphens: auto;
-                        word-wrap: break-word;
-
-                        & a {
-                            text-decoration: none;
-                            font-weight: bold;
-                            color: $orange;
-                        }
-                    }
-                    &__repo {
-                        align-self: flex-end;
-                        margin-top: auto;
-                    }
-                }
+            &__tag {
+                background-color: $grey-80;
+                border-radius: 0.25rem;
+                padding: 0.25rem 0.5rem;
+                margin-right: 0.25rem;
+                margin-bottom: 0.25rem;
+                font-size: 0.75rem;
+                font-weight: 400;
             }
         }
     }
 }
 
-// * Animations
-@keyframes bounce {
-    0% {
-        transform: translateY(0);
-    }
-    65% {
-        transform: translateY(-25px);
-    }
-    100% {
-        transform: translateY(0);
-    }
+.default-content {
+    position: relative;
+    z-index: 2;
 }
